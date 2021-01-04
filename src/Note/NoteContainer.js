@@ -1,41 +1,43 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { notes } from '../notes.json'
+import Button from "./Button.js";
 
 import "./Note.css";
+import NoteImage from "./NoteImage";
 
 function NoteContainer() {
 
   const [noteShown, setNote] = useState(notes[0]);
-  const [isCorrect, assignAnswer] = useState(false);
+  const standardNotes = ["C", "D", "E", "F", "G", "A", "B"]
 
-  useEffect(() => {
-    console.log(noteShown);
-  }, [noteShown]);
 
-  useEffect(() => {
-    isCorrect &&
-      console.log("Yea")
+  const compareNotes = (userNote) => {
+    if (userNote === noteShown.standardNote) {
+      console.log("Correct!")
       setNote(notes[Math.floor(Math.random() * notes.length)])
-      assignAnswer(false)
-  }, [isCorrect]);
-
-  const userInput = (e) => {
-    let keyCode = e.keyCode;
-    if (keyCode === noteShown.keyCode) {
-      assignAnswer(true)
     } else {
-      assignAnswer(false)
+      console.log("sorrryyyy nope")
     }
-  };
-
-  document.addEventListener("keypress", userInput, false);
+  }
 
   return (
     <div className="NoteContainer">
-      <h1>Use your keyboard to guss the Note below!</h1>
+      <h1>Use the buttons to guess the Note below!</h1>
       <div className="Note">
-        <img className="Note-image" src={`${noteShown.imageUrl}`} alt="Note" />
+        <NoteImage
+          noteShown={noteShown}
+        />
+        <div className="ButtonContainer">
+          {standardNotes.map((note) => 
+            <Button
+            key={note}
+              note={note}
+              noteShown={noteShown}
+              compareNotes={compareNotes}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

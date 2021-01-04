@@ -2,62 +2,62 @@
   "notes": [
     {
       "name": "C4",
-      "keyCode": 99,
+      "standardNote": "C",
       "imageUrl": "/images/C4.png"
     },
     {
       "name": "D4",
-      "keyCode": 100,
+      "standardNote": "D",
       "imageUrl": "/images/D4.png"
     },
     {
       "name": "E4",
-      "keyCode": 101,
+      "standardNote": "E",
       "imageUrl": "/images/E4.png"
     },
     {
       "name": "F4",
-      "keyCode": 102,
+      "standardNote": "F",
       "imageUrl": "/images/F4.png"
     },
     {
       "name": "G4",
-      "keyCode": 103,
+      "standardNote": "G",
       "imageUrl": "/images/G4.png"
     },
     {
       "name": "C5",
-      "keyCode": 99,
+      "standardNote": "C",
       "imageUrl": "/images/C5.png"
     },
     {
       "name": "D5",
-      "keyCode": 100,
+      "standardNote": "D",
       "imageUrl": "/images/D5.png"
     },
     {
       "name": "E5",
-      "keyCode": 101,
+      "standardNote": "E",
       "imageUrl": "/images/E5.png"
     },
     {
       "name": "F5",
-      "keyCode": 102,
+      "standardNote": "F",
       "imageUrl": "/images/F5.png"
     },
     {
       "name": "G5",
-      "keyCode": 103,
+      "standardNote": "G",
       "imageUrl": "/images/G5.png"
     },
     {
       "name": "A5",
-      "keyCode": 97,
+      "standardNote": "A",
       "imageUrl": "/images/A5.png"
     },
     {
         "name": "B5",
-        "keyCode": 98,
+        "standardNote": "B",
         "imageUrl": "/images/B5.png"
       }
   ]

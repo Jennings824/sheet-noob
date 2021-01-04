@@ -1,10 +1,14 @@
 import React from 'react'
 
-function Button() {
+const Button = ({note, compareNotes}) => {
+
     return (
         <>
+        <div className="button" onClick={() => compareNotes(note)}>
+            {note}
+        </div>
         </>
     );
 }
 
-export default Button;
+export default Button

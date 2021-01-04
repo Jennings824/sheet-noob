@@ -14,8 +14,8 @@ function App() {
       {!userReady && (
         <>
         <h1 className="Intro">
-          Hello, folks! This app is aimed at helping you 
-          remember notes on sheet music.
+          This app is aimed at helping you 
+          remember sheet music notes.
         </h1>
         <button className="Intro-button" onClick={() => setUserReady(true)}>
           Ready to Start?

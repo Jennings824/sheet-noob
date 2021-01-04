@@ -7,5 +7,28 @@
   }
 
 .Note-image {
-    width: 50vw;
+    width: 25vw;
+ }
+
+ .ButtonContainer {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+
+ }
+
+ .button {
+  padding: 15px 32px;
+  margin: 10px;
+  background: #4CAF50;;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  color: #fbfbfb;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.4);
+  font-size: 15px;
+  text-align: center;
+  text-indent: 5px;
+  cursor: pointer;
  }
