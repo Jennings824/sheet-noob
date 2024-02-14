@@ -6,18 +6,25 @@ import Button from "./Button.js";
 import "./Note.css";
 import NoteImage from "./NoteImage";
 
-function NoteContainer() {
+const NoteContainer = ({setUserScore}) => {
 
-  const [noteShown, setNote] = useState(notes[0]);
+  const [noteShown, setNoteShown] = useState(notes[0]);
+  const [feedbackMessage, setFeedbackMessage] = useState('')
+
   const standardNotes = ["C", "D", "E", "F", "G", "A", "B"]
 
+  const selectNewNote = () => {
+    setNoteShown(notes[Math.floor(Math.random() * notes.length)])
+  }
 
   const compareNotes = (userNote) => {
     if (userNote === noteShown.standardNote) {
-      console.log("Correct!")
-      setNote(notes[Math.floor(Math.random() * notes.length)])
+      setFeedbackMessage('Correct! Well done')
+      setUserScore(prevScore => prevScore + 1)
+      selectNewNote()
     } else {
-      console.log("sorrryyyy nope")
+      setFeedbackMessage('EHHH Wrong!')
+      setUserScore(prevScore => prevScore - 1)
     }
   }
 
@@ -39,6 +46,7 @@ function NoteContainer() {
           )}
         </div>
       </div>
+      <h1>{feedbackMessage}</h1>
     </div>
   );
 }
