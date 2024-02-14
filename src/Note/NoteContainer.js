@@ -10,6 +10,8 @@ const NoteContainer = ({setUserScore}) => {
 
   const [noteShown, setNoteShown] = useState(notes[0]);
   const [feedbackMessage, setFeedbackMessage] = useState('')
+  const [currentStreak, setCurrentStreak] = useState(0);
+  const [longestStreak, setLongestStreak] = useState(0);
 
   const standardNotes = ["C", "D", "E", "F", "G", "A", "B"]
 
@@ -21,10 +23,18 @@ const NoteContainer = ({setUserScore}) => {
     if (userNote === noteShown.standardNote) {
       setFeedbackMessage('Correct! Well done')
       setUserScore(prevScore => prevScore + 1)
+      setCurrentStreak((prevStreak) => {
+          const newStreak = prevStreak +1;
+          if(newStreak > longestStreak) {
+            setLongestStreak(newStreak)
+          }
+          return newStreak
+      })
       selectNewNote()
     } else {
       setFeedbackMessage('EHHH Wrong!')
       setUserScore(prevScore => prevScore - 1)
+      setCurrentStreak(0)
     }
   }
 
@@ -47,6 +57,8 @@ const NoteContainer = ({setUserScore}) => {
         </div>
       </div>
       <h1>{feedbackMessage}</h1>
+      <h1>Currennt Streak: {currentStreak}</h1>
+      <h1>Longest Streak: {longestStreak}</h1>
     </div>
   );
 }
